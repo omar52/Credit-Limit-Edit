@@ -6,6 +6,7 @@
     'depends': ['base'],
     'data': [  # path within the application
         'security/security.xml',
+        'views/res_partner_view.xml',
         'views/res_region_view.xml',
     ],
     'assets': {
