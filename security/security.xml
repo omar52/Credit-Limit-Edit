@@ -4,7 +4,7 @@
     </record>
 
     <record id="editable_credit_limit_group" model="res.groups">
-        <field name="name">Editable Credit Limit Group</field>
+        <field name="name">Edit Credit Limit</field>
         <field name="category_id" ref="credit_limit_edit.credit_limit_category"/>
     </record>
 

@@ -1,0 +1,44 @@
+<odoo>
+    <!--    Tree View-->
+    <record id="res_region_inherited_tree_view" model="ir.ui.view">
+        <field name="name">Res Region Inherited Tree View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="region_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    Form View-->
+    <record id="res_region_inherited_form_view" model="ir.ui.view">
+        <field name="name">Res Region Inherited Form View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="region_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_res_partner_filter_inherit_region" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit.region</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter
+                        name="group_by_region"
+                        string="Region"
+                        context="{'group_by': 'region_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+
